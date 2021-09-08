@@ -72,26 +72,26 @@ const renderToDo = (todos) => {
         // Do Loop
         output += `
     <div class='d-flex flex-row justify-content-center align-items-center todo-list' data-id='${post.id}'>\
-    <div class='d-flex justify-content-center align-items-center' style='width: 5%;'>\
-      <button class='search' type='submit' data-bs-toggle='modal' data-bs-target='#staticBackdrop1'>\
-        <img src='picture/ceklis.svg' width='20px' height='20px'>\
-      </button>\
-    </div >\
-    <div class='d-flex justify-content-start align-items-center'  style='width: 40%;'>\
-      <div class='classtodotitle' id='nama-user' style='font-size:20px;'>${post.todoname}</div>\
-    </div>\
-    <div class='d-flex justify-content-start align-items-center'  style='width: 45%;'>\
-        <div class='classtododeadline' style='font-size:20px;'>${post.tododeadline}</div>\
+      <div class='d-flex justify-content-center align-items-center' style='width: 5%;'>\
+        <button class='search' type='submit' data-bs-toggle='modal' data-bs-target='#staticBackdrop1'>\
+          <img src='picture/ceklis.svg' width='20px' height='20px'>\
+        </button>\
+      </div >\
+      <div class='d-flex justify-content-start align-items-center'  style='width: 40%;'>\
+        <div class='classtodotitle' id='nama-user' style='font-size:20px;'>${post.todoname}</div>\
       </div>\
-    <div class='d-flex flex-row justify-content-around'  style='width: 10%;'>\
-      <button class='search' style='background-color:rgba(255, 198, 51, 1)' id="edit-todo" type='submit' data-bs-toggle='modal' data-bs-target='#modalForm1'>\
-        <img src='picture/ceklis-bg.svg' width='20px' height='20px'>
-      </button>\
-      <button class='search' style='background-color:rgba(255, 102, 102, 1)' id='delete-todo' type='submit' data-bs-toggle='modal' data-bs-target='#staticBackdrop'>\
-        <img src='picture/trash 1.svg' width='20px' height='20px'>
-      </button>\
-    </div>\
-  </div>
+      <div class='d-flex justify-content-start align-items-center'  style='width: 45%;'>\
+          <div class='classtododeadline' style='font-size:20px;'>${post.tododeadline}</div>\
+        </div>\
+      <div class='d-flex flex-row justify-content-around'  style='width: 10%;'>\
+        <button class='search' style='background-color:rgba(255, 198, 51, 1)' id="edit-todo" type='submit' data-bs-toggle='modal' data-bs-target='#modalForm1'>\
+          <img src='picture/ceklis-bg.svg' width='20px' height='20px'>
+        </button>\
+        <button class='search' style='background-color:rgba(255, 102, 102, 1)' id='delete-todo' type='submit' data-bs-toggle='modal' data-bs-target='#staticBackdrop'>\
+          <img src='picture/trash 1.svg' width='20px' height='20px'>
+        </button>\
+      </div>\
+    </div>
     `;
     });
     todoList.innerHTML = output;
