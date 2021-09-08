@@ -12,54 +12,80 @@ loginBtn.addEventListener('click', () => {
 
 
 // -----------API---------------
-const button = document.querySelector('.button');
+function Login() {
+   let emailInput = document.getElementById("email").value;
+   let passInput = document.getElementById("pass").value;
 
-const api_URL = '';
+   fetch("https://613846baeac1410017c185a2.mockapi.io/UserAdmin")
+      .then(response => response.json())
+      .then((result) => {
+         let user = result.filter((item) => item.email === emailInput);
 
-async function users() {
-   const response = await fetch(api_URL);
-   const data = await response.json();
+         console.log(user);
 
-   return data;
+         if (user.length > 0) {
+            if (user[0].password === passInput) {
+               localStorage.setItem("user", JSON.stringify(user[0]));
+               alert("Login Berhasil")
+            } else {
+               alert("Password Salah")
+               document.getElementById("pass").value = '';
+            }
+         } else {
+            alert("Email tidak ditemukan")
+         }
+      })
+   // document.getElementById("email").value = '';
 }
 
-function login(username, password) {
-   if (typeof username == 'string' && typeof password == 'string' && username.length > 0 && password.length > 0) {
-      var loggeduser;
+function Signup() {
+   let nameInput = document.getElementById("nameSignup").value;
+   let emailInput = document.getElementById("emailSignup").value;
+   let passInput = document.getElementById("passSignup").value;
 
-      for (var index in users) {
-         var user = users[index];
+   if (nameInput === "" || nameInput === null) {
+      alert("Harap memasukkan nama")
+      return false
+   }
 
-         if (username === user.email && password === user.password)
-            loggeduser = user;
+   if (emailInput === "" || emailInput === null) {
+      alert("Harap memasukkan email")
+      return false
+   } else {
+      var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+      if (!mailformat.test(emailInput)) {
+         alert("Harap memasukkan email dengan benar")
+         return false;
       }
    }
+
+   if (passInput === "" || passInput === null) {
+      alert("Harapa memasukkan password")
+      return false
+   } else {
+      if (passInput.length < 6) {
+         alert("Password minimal 6 karakter")
+         return false
+      }
+   }
+
+   fetch("https://613846baeac1410017c185a2.mockapi.io/UserAdmin", {
+      method: 'POST',
+      body: JSON.stringify({
+         email: emailInput,
+         name: nameInput,
+         password: passInput
+      }),
+      headers: {
+         "Content-Type": "application/json; charset=UTF-8"
+      }
+   })
+      .then(response => response.json())
+      .then((result) => {
+         console.log(result);
+         alert("Pendaftaran berhasil. Silahkan login")
+      })
+   document.getElementById("nameSignup").value = '';
+   document.getElementById("emailSignup").value = '';
+   document.getElementById("passSignup").value = '';
 }
-
-
-document.getElementById('loginForm').addEventListener('submit', function (e) {
-   e.preventDefault();
-
-   var username_element = e.elements.username;
-   var password_element = e.elements.password;
-
-   if (username_element && password_element) {
-      username = username_element.value;
-      password = password_element.value;
-
-      var user = login(username, password);
-
-      if (user !== false) {
-         username_element.value = '';
-         password_element.value = '';
-
-         alert('SUKSES')
-      } else {
-         username_element.value = '';
-         password_element.value = '';
-
-         alert("GAGAL");
-      }
-
-   }
-})

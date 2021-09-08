@@ -14,7 +14,7 @@
    <div class="container" id="container">
       <!-- Main Start -->
       <div class="formContainer signUp">
-         <form action="#">
+         <form action="#" onsubmit="return false">
             <h1>Sign up</h1>
             <div class="socialMedia">
                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -22,15 +22,15 @@
                <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
             </div>
             or use email
-            <input type="text" placeholder="Name" />
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Password" />
-            <button>Sign Up</button>
+            <input type="text" placeholder="Name" id="nameSignup" />
+            <input type="email" placeholder="Email" id="emailSignup" />
+            <input type="password" placeholder="Password" id="passSignup" />
+            <button type="submit" onclick="Signup()">Sign Up</button>
          </form>
       </div>
 
       <div class="formContainer login">
-         <form action="#" id='loginForm'>
+         <form action="#" id='loginForm' onsubmit="return false">
             <h1>Login</h1>
 
             <div class="socialMedia">
@@ -43,31 +43,30 @@
             <input type="password" placeholder="Password" id='pass' />
             <a href="./forget.html">Forgot your password?</a>
 
-            <button type="submit">login</button>
-
+            <button type="submit" onclick="Login()">login</button>
          </form>
-      </div>
-      <!-- Main End -->
+         <!-- Main End -->
 
-      <!-- Slider Start -->
-      <div class="slider">
-         <div class="sliders">
-            <div class="sliderContainer sliderL">
-               <img src="./picture/Glints K-6-logos_white.png" alt="">
+         <!-- Slider Start -->
+         <div class="slider">
+            <div class="sliders">
+               <div class="sliderContainer sliderL">
+                  <img src="./picture/Glints K-6-logos_white.png" alt="">
 
-               <h1>Welcome Back!</h1>
-               <p>Silahkan login kalau sudah punya akun </p>
-               <button class="sliderBtn" id="login">login</button>
-            </div>
-            <div class="sliderContainer sliderR">
-               <img src="./picture/Glints K-6-logos_white.png" alt="">
-               <h1>Sign up</h1>
-               <p>Daftarkan dirimu kalau belum punya akun</p>
-               <button class="sliderBtn" id="signUp">Sign Up</button>
+                  <h1>Welcome Back!</h1>
+                  <p>Silahkan login kalau sudah punya akun </p>
+                  <button class="sliderBtn" id="login">login</button>
+               </div>
+               <div class="sliderContainer sliderR">
+                  <img src="./picture/Glints K-6-logos_white.png" alt="">
+                  <h1>Sign up</h1>
+                  <p>Daftarkan dirimu kalau belum punya akun</p>
+                  <button class="sliderBtn" id="signUp">Sign Up</button>
+               </div>
             </div>
          </div>
+         <!-- Slider End -->
       </div>
-      <!-- Slider End -->
    </div>
 
    <script src="./script.js"></script>
