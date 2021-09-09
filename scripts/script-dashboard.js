@@ -155,6 +155,7 @@ function OnSearch(input){
 
 
 
+
 // Fungsi carinnya
 var banding = 0;
 function cari(){
@@ -171,8 +172,8 @@ function cari(){
     data.forEach(
     data =>{
       // var pattern = /Ridho/i
-      if(data.todoname.match(regx)==dicar.value){
-        regexArray.push(data.todoname.match(regx))
+      if(data.username.match(regx)==dicar.value){
+        regexArray.push(data.username.match(regx))
         hasil++;
         // setTimeout(function(){
         //   location.reload()}, 3000);
@@ -193,7 +194,7 @@ function cari(){
     renderBool++;
   }
   if(hasil>0){
-    if(banding<<regexArray.length){
+    // if(banding<<regexArray.length){
       // console.log(banding);
       banding++;
       data.forEach(
@@ -201,7 +202,7 @@ function cari(){
           var dihapus = document.getElementById(data.id);
           dihapus.parentNode.removeChild(dihapus)
       }
-  )}}else{
+  )}else{
     Swal.fire({
       icon: 'error',
       title: 'Tidak ditemukan',
@@ -217,6 +218,7 @@ function cari(){
   })
 }
 }
+
 
 if(document.getElementById("tombol-cari").value == ""){
 fetch(url) // Fecth Data API
