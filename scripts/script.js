@@ -112,7 +112,6 @@ function Logout() {
 function Forget() {
    let emailInput = document.getElementById("email").value;
    let passInput = document.getElementById("pass").value;
-   console.log(passInput);
 
    fetch("https://613846baeac1410017c185a2.mockapi.io/UserAdmin")
       .then((response) => response.json())
@@ -121,7 +120,18 @@ function Forget() {
          console.log(user);
          if (user.length > 0) {
             if (user[0].email === emailInput) {
-               console.log(user.email)
+               if (passInput === "" || passInput === null) {
+                  alert("Harapa memasukkan password");
+                  return false;
+               } else {
+                  if (passInput.length < 6) {
+                     alert("Password minimal 6 karakter");
+                     document.getElementById("pass").value = ''
+                     return false;
+                  }
+               }
+               user[0].password = passInput;
+               alert("Password Sudah Diganti")
             }
          } else {
             alert("Email tidak ditemukan");

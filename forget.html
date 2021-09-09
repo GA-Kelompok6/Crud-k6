@@ -12,20 +12,20 @@
 <body>
    <div class="containerForget">
       <div class="formContainer-Forget">
-         <form action="#">
-            <img src="./picture/Glints K-6-logos_black.png" alt="">
+         <form action="#" onsubmit="return false">
+            <img src="./picture/Glints K-6-logos_black.png">
             <h1>Forget Password</h1>
-            type your email here
-            <input type="email" placeholder="Email" />
-            <button>Sign Up</button>
-            <a href="./login.html">Sign In?</a>
-
+            type your email and new password here
+            <input type="email" placeholder="Email" id="email" style="margin-top: 25px;" />
+            <input type="password" placeholder="New Password" id="pass" />
+            <button type="submit" onclick="Forget()">Reset Password</button>
+            <a href="./index.html">Sign In?</a>
          </form>
       </div>
 
    </div>
 
-   <script src="scripts/script.js"></script>
+   <script src="./scripts/script.js"></script>
 </body>
 
 </html>
