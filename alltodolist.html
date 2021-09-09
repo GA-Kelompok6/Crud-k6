@@ -7,18 +7,17 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">	
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.min.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com"> 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">	
-
     <!-- Extra Files-->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.11.1/datatables.min.css"/>
     <!--<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css"/>-->
-    <link rel="stylesheet" href="styles/style-dashboard.css">
+    <link rel="stylesheet" href="styles/style-alltodolist.css">
     <title>Aplikasi To Do List GA-Kelompok 6</title>
   </head>
   <body>
@@ -34,7 +33,7 @@
               <img src="https://cdn-icons-png.flaticon.com/512/1946/1946429.png" alt="mdo" width="32" height="32" class="rounded-circle">
             </a>
             <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2" style="">
-              <li><a class="dropdown-item" href="#" onclick="">Sign out</a></li>
+              <li><a class="dropdown-item" href="#">Sign out</a></li>
             </ul>
           </div>
         </div>
@@ -43,92 +42,88 @@
     <div class="row" style="width:100%">
       <div class="col-2">
         <div style="width:100%; height:100%;background-color:black">
-          <div class="d-flex flex-column flex-shrink-0 p-4 text-white" style="width:100%; height: 100%; background-color: rgb(26,157,229);">
-            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none" style="font-family: Roboto;">
-              <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-              <span class="fs-5">Main Menu</span>
-            </a>
-            <hr>
-            <ul class="nav nav-pills flex-column mb-auto">
-              <li class="nav-item">
-              <a href="dashboard.html" class="nav-link mb-2" style="border-radius: 50px; background-color: white;" >
-                <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
-                Dashboard
+          <div style="width:100%; height:100%;background-color:black">
+            <div class="d-flex flex-column flex-shrink-0 p-4 text-white" style="width:100%; height: 100%; background-color: rgb(26,157,229);">
+              <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none" style="font-family: Roboto;">
+                <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+                <span class="fs-5">Main Menu</span>
               </a>
-              </li>
-              <li>
-              <a href="alltodolist.html" class="nav-link active mb-2" style="border-radius: 50px; " aria-current="page">
-                <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
-                To Do List
-              </a>
-              </li>
-            </ul>
-            <hr>
-            </div>
+              <hr>
+              <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                <a href="dashboard.html" class="nav-link active mb-2" style="border-radius: 50px;" aria-current="page">
+                  <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+                  Dashboard
+                </a>
+                </li>
+                <li>
+                <a href="alltodolist.html" class="nav-link mb-2" style="border-radius: 50px;background-color: white;">
+                  <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
+                  To Do List
+                </a>
+                </li>
+              </ul>
+              <hr>
+              </div>
+          </div>
         </div>
       </div>
       <div class="col-10">
-        <!-- NAVBAR AT LIST OF USER  -->
+        <!-- NAVBAR AT LIST OF TO DO  -->
         <div class="d-flex flex-row justify-content-center align-items-center" id="user-nav" >
-          <!-- TULISAN LIST OF USER -->
           <div clas="col" id="user" style=" width: 50%;font-size: 25px; color: black;">
-            List of User
+            All To Do List
           </div>
-          <!-- SECTION SEARCH -->
           <div clas="col" id="search" style="width: 50%;">
-              <!-- TOMBOL SEARCH -->
-              <input id="tombol-cari" type="search"  onsearch="OnSearch(this)" placeholder="Search" style="background-color:rgba(251, 251, 251, 1); border:1px solid black">
+              <input id="tombol-cari" type="search" onsearch="OnSearch(this)" placeholder="Search" style="background-color:rgba(251, 251, 251, 1); border:1px solid black">
               <button class="search" type="submit" onclick="cari()">
                 <img src="picture/image 3.svg" width="20px" height="20px">
               </button>
-                <!-- TOMBOL ADD -->
                 <button class="search" type="submit" data-bs-toggle="modal" data-bs-target="#modalForm2">
                 <img src="picture/image 2.svg" width="20px" height="20px">
               </button>
           </div>
         </div>
 
-        <!-- USER  -->
+        <!-- LIST  -->
         <div id='wrapper'>
-            <!-- INI JADI TARGET BINDING DARI YANG DI JS  -->
             <div class="d-flex flex-column justify-content-center align-items-center" id="user-column">
             </div>
         </div>
 
-    <!-- Modal Hapus user-->
+    <!-- Modal For Delete-->
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="staticBackdropLabel">Delete User</h5>
+            <h5 class="modal-title" id="staticBackdropLabel">Delete List?</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            Are You Sure Want delete this User?
+            Are You Sure Want Delete This List?
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
-            <!-- Tombol yes, jika dipencet bakal eksekusi fungsi hapus -->
-            <button type="button" class="btn btn-success deletebtn" id="deletebtn" onclick="hapus()" data-bs-dismiss="modal">Yes</button>
+            <button type="submit" class="btn btn-success deletebtn" data-bs-dismiss="modal">Yes</button>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Modal -->
+    <!-- Modal For Uncheck -->
     <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="staticBackdropLabel">Deactive User</h5>
+            <h5 class="modal-title" id="staticBackdropLabel">Uncheck List?</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            Do You Sure Want deactive User 1?
+            Do You Sure Want To Uncheck This List?
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
-            <button type="button" class="btn btn-success ">Yes</button>
+            <button type="button" class="btn btn-success">Yes</button>
           </div>
         </div>
       </div>
@@ -136,31 +131,22 @@
 
     <!-- Modal Form Add-->
     <div class="modal fade" id="modalForm2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl">
+        <div class="modal-dialog modal-m">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Create New User</h5>
+                <h5 class="modal-title" id="staticBackdropLabel">Create New List</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
                 <form class="add-todo-form" id="edit-user-form">
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Username</label>
-                    <input type="text" class="form-control" id="username-value" placeholder="Enter username">
+                    <label for="exampleInputEmail1">To Do List Name</label>
+                    <input type="text" class="form-control" id="title-value" placeholder="Enter List Name">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Email</label>
-                    <input type="email" class="form-control" id="email-value" aria-describedby="emailHelp" placeholder="Enter email">
+                    <label for="exampleInputEmail1">Enter Deadline</label>
+                    <input type="text" class="form-control" id="deadline-value" aria-describedby="emailHelp" placeholder="Enter Deadline">
                   </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Password">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Repeate Password</label>
-                    <input type="password" class="form-control" id="password-value" placeholder="Enter Password">
-                  </div>
-
                   <div class="form-group">
                     <button type="submit" class="btn btn-primary">Submit</button>
                   </div>
@@ -171,32 +157,23 @@
     </div>
 
     <!-- Modal Form Edit-->
-    <div class="modal fade" id="modalForm3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-xl">
+    <div class="modal fade" id="modalForm1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-m">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="staticBackdropLabel">Create New User</h5>
+              <h5 class="modal-title" id="staticBackdropLabel">Edit List</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <form class="add-todo-form special-edit" id="edit-user-form">
+              <form id="edit-user-form">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Username</label>
-                  <input type="text" class="form-control" id="username-value-edit" placeholder="Enter username">
+                  <label for="exampleInputEmail1">To Do List Name</label>
+                  <input type="text" class="form-control" id="title-value-edit" placeholder="Enter List Name">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Email</label>
-                  <input type="email" class="form-control" id="email-value-edit" aria-describedby="emailHelp" placeholder="Enter email">
+                  <label for="exampleInputEmail1">Enter Deadline</label>
+                  <input type="text" class="form-control" id="deadline-value-edit" aria-describedby="emailHelp" placeholder="Enter Deadline">
                 </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1-edit" placeholder="Enter Password">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Repeate Password</label>
-                  <input type="password" class="form-control" id="password-value-edit" placeholder="Enter Password">
-                </div>
-
                 <div class="form-group">
                   <button type="submit" class="btn btn-primary editbtn">Submit</button>
                 </div>
@@ -204,7 +181,7 @@
             </div>
           </div>
       </div>
-    </div>
+  </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
     <script src="javascript.js"></script>
@@ -223,7 +200,6 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.min.js"></script>
     
-    <script src="scripts/script-dashboard.js"></script>
-    
+    <script src="scripts/script-alltodolist.js"></script>
   </body>
 </html>

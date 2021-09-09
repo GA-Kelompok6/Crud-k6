@@ -1,0 +1,121 @@
+.selector-for-some-widget {
+  box-sizing: content-box;
+}
+
+body {
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+.navbar1 {
+  width: 100%;
+  height: 50px;
+  background-image: linear-gradient(
+      to left,
+      rgb(26, 157, 229),
+      rgb(70, 236, 228)
+  );
+}
+
+#user {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#search {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#search > * {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+#search > *:first-child {
+  border: 0;
+  border-radius: 20px;
+  height: 40px;
+  width: 220px;
+}
+
+#user-nav > * {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.search {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 5px;
+}
+
+#user-column > * {
+  width: 100%;
+  background-color: rgba(234, 234, 234, 1);
+  height: 60px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 50px;
+  overflow-x: hidden;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 5px;
+}
+
+#edit-user-form > * {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#wrapper {
+  width: 100%;
+  overflow-y: scroll;
+  height: 600px;
+}
+
+/* scroll view */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.fs-4 {
+  font-family: "Roboto";
+  font-size: 18px;
+}
+
+.tulisan {
+  font-family: "Roboto", sans-serif;
+  font-size: 25px;
+  color: white;
+}
+
+#tombol-cari:focus{
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 0 0 1pt aqua;
+  outline: none;
+  transition: .1s;
+
+}
