@@ -58,11 +58,9 @@ function OnSearch(input){
   }
 
     var store = localStorage.getItem("user");
-    console.log()
-    console.log(store);
-    if(store.role == "admin"){
+    if(JSON.parse(store).role === "admin"){
       console.log("admin")
-    }else if(store.role == "user"){
+    }else if(JSON.parse(store).role === "user"){
       document.getElementById("btn-dash").style.display = "none";
       console.log("user")      
     }else{
