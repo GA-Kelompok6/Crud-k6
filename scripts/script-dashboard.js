@@ -153,7 +153,10 @@ function OnSearch(input){
           // location.reload()}, 3000);
 }
 
+
+
 // Fungsi carinnya
+var banding = 0;
 function cari(){
   var dicar = document.getElementById("tombol-cari");
   var temp = [];
@@ -168,8 +171,8 @@ function cari(){
     data.forEach(
     data =>{
       // var pattern = /Ridho/i
-      if(data.username.match(regx)==dicar.value){
-        regexArray.push(data.username.match(regx))
+      if(data.todoname.match(regx)==dicar.value){
+        regexArray.push(data.todoname.match(regx))
         hasil++;
         // setTimeout(function(){
         //   location.reload()}, 3000);
@@ -190,7 +193,7 @@ function cari(){
     renderBool++;
   }
   if(hasil>0){
-    // if(banding<<regexArray.length){
+    if(banding<<regexArray.length){
       // console.log(banding);
       banding++;
       data.forEach(
@@ -198,7 +201,7 @@ function cari(){
           var dihapus = document.getElementById(data.id);
           dihapus.parentNode.removeChild(dihapus)
       }
-  )}else{
+  )}}else{
     Swal.fire({
       icon: 'error',
       title: 'Tidak ditemukan',
