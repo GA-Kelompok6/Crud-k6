@@ -10,11 +10,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">	
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.min.css">
 
     <!-- Extra Files-->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.11.1/datatables.min.css"/>
     <!--<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css"/>-->
-    <link rel="stylesheet" href="style-alltodolist.css">
+    <link rel="stylesheet" href="styles/style-alltodolist.css">
     <title>Aplikasi To Do List GA-Kelompok 6</title>
   </head>
   <body>
@@ -72,7 +75,7 @@
             All To Do List
           </div>
           <div clas="col" id="search" style="width: 50%;">
-              <input id="tombol-cari" type="search" onkeyup="myFunction()" placeholder="Search" style="background-color:rgba(251, 251, 251, 1); border:1px solid black">
+              <input id="tombol-cari" type="search" onsearch="OnSearch(this)" placeholder="Search" style="background-color:rgba(251, 251, 251, 1); border:1px solid black">
               <button class="search" type="submit" onclick="cari()">
                 <img src="picture/image 3.svg" width="20px" height="20px">
               </button>
@@ -194,6 +197,9 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
     -->
-    <script src="script-alltodolist.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.min.js"></script>
+    
+    <script src="scripts/script-alltodolist.js"></script>
   </body>
 </html>
