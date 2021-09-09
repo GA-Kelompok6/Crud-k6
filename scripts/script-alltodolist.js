@@ -68,6 +68,7 @@ function OnSearch(input){
     }
 
 
+
 // Fungsi carinnya
 var banding = 0;
 function cari(){
@@ -112,7 +113,7 @@ function cari(){
       data.forEach(
         data =>{
           var dihapus = document.getElementById(data.id);
-          dihapus.parentNode.removeChild(dihapus);
+          dihapus.parentNode.removeChild(dihapus)
       }
   )}}else{
     Swal.fire({
@@ -130,7 +131,6 @@ function cari(){
   })
 }
 }
-
 
 // Get - Read ToDo List
 // Method GET
