@@ -1,98 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-        <link rel="stylesheet" href="./style.css" />
-        <link
-            rel="stylesheet"
-            href="//use.fontawesome.com/releases/v5.8.1/css/all.css"
-        />
-    </head>
 
-    <body>
-        <div class="container" id="container">
-            <!-- Main Start -->
-            <div class="formContainer signUp">
-                <form action="#" onsubmit="return false">
-                    <h1>Sign up</h1>
-                    <div class="socialMedia">
-                        <a href="#" class="social"
-                            ><i class="fab fa-facebook-f"></i
-                        ></a>
-                        <a href="#" class="social"
-                            ><i class="fab fa-google-plus-g"></i
-                        ></a>
-                        <a href="#" class="social"
-                            ><i class="fab fa-linkedin-in"></i
-                        ></a>
-                    </div>
-                    or use email
-                    <input type="text" placeholder="Name" id="nameSignup" />
-                    <input type="email" placeholder="Email" id="emailSignup" />
-                    <input
-                        type="password"
-                        placeholder="Password"
-                        id="passSignup"
-                    />
-                    <button type="submit" onclick="Signup()">Sign Up</button>
-                </form>
+<head>
+   <meta charset="UTF-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Document</title>
+   <link rel="stylesheet" href="./styles/style.css" />
+   <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/all.css" />
+</head>
+
+<body>
+   <div class="container" id="container">
+      <!-- Main Start -->
+      <div class="formContainer signUp">
+         <form action="#" onsubmit="return false">
+            <h1>Sign up</h1>
+            <div class="socialMedia">
+               <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+               <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+               <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            or use email
+            <input type="text" placeholder="Name" id="nameSignup" />
+            <input type="email" placeholder="Email" id="emailSignup" />
+            <input type="password" placeholder="Password" id="passSignup" />
+            <div id="radio-button">
+               <input type="radio" name="role" id="admin" value="admin" checked="checked" />
+               <label for="admin">Admin</label>
+
+               <input type="radio" name="role" id="user" value="user" />
+               <label for="user">User</label>
             </div>
 
-            <div class="formContainer login">
-                <form action="#" id="loginForm" onsubmit="return false">
-                    <h1>Login</h1>
+            <button type="submit" onclick="Signup()">Sign Up</button>
+         </form>
+      </div>
 
-                    <div class="socialMedia">
-                        <a href="#" class="social"
-                            ><i class="fab fa-facebook-f"></i
-                        ></a>
-                        <a href="#" class="social"
-                            ><i class="fab fa-google-plus-g"></i
-                        ></a>
-                        <a href="#" class="social"
-                            ><i class="fab fa-linkedin-in"></i
-                        ></a>
-                    </div>
-                    <span>or use your account </span>
-                    <input type="email" placeholder="Email" id="email" />
-                    <input type="password" placeholder="Password" id="pass" />
-                    <a href="./forget.html">Forgot your password?</a>
+      <div class="formContainer login">
+         <form action="#" id="loginForm" onsubmit="return false">
+            <h1>Login</h1>
 
-                    <button type="submit" onclick="Login()">login</button>
-                </form>
+            <div class="socialMedia">
+               <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+               <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+               <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
             </div>
-            <!-- Main End -->
+            <span>or use your account </span>
+            <input type="email" placeholder="Email" id="email" />
+            <input type="password" placeholder="Password" id="pass" />
+            <a href="./forget.html">Forgot your password?</a>
 
-            <!-- Slider Start -->
-            <div class="slider">
-                <div class="sliders">
-                    <div class="sliderContainer sliderL">
-                        <img
-                            src="./picture/Glints K-6-logos_white.png"
-                            alt=""
-                        />
+            <button type="submit" onclick="Login()">Login</button>
+         </form>
+      </div>
+      <!-- Main End -->
 
-                        <h1>Welcome Back!</h1>
-                        <p>Silahkan login kalau sudah punya akun</p>
-                        <button class="sliderBtn" id="login">login</button>
-                    </div>
-                    <div class="sliderContainer sliderR">
-                        <img
-                            src="./picture/Glints K-6-logos_white.png"
-                            alt=""
-                        />
-                        <h1>Sign up</h1>
-                        <p>Daftarkan dirimu kalau belum punya akun</p>
-                        <button class="sliderBtn" id="signUp">Sign Up</button>
-                    </div>
-                </div>
+      <!-- Slider Start -->
+      <div class="slider">
+         <div class="sliders">
+            <div class="sliderContainer sliderL">
+               <img src="./picture/Glints K-6-logos_white.png" alt="" />
+
+               <h1>Welcome Back!</h1>
+               <p>Silahkan login kalau sudah punya akun</p>
+               <button class="sliderBtn" id="login">login</button>
             </div>
-            <!-- Slider End -->
-        </div>
+            <div class="sliderContainer sliderR">
+               <img src="./picture/Glints K-6-logos_white.png" alt="" />
+               <h1>Sign up</h1>
+               <p>Daftarkan dirimu kalau belum punya akun</p>
+               <button class="sliderBtn" id="signUp">Sign Up</button>
+            </div>
+         </div>
+      </div>
+      <!-- Slider End -->
+   </div>
 
-        <script src="./script.js"></script>
-    </body>
+   <script src="./scripts/script.js"></script>
+</body>
+
 </html>

@@ -17,7 +17,9 @@ body {
     justify-content: flex-start;
     align-items: center;
 }
-
+#namaUser{
+    padding-right: 20px;
+}
 #search {
     display: flex;
     justify-content: flex-end;
