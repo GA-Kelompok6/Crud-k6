@@ -1,56 +1,6 @@
-// function hapus(){
-//     var nama = document.getElementById("nama-user").innerText;
-//     const namanya = (element) => element == nama;
-//     var index = username.findIndex(namanya);
+// import { user} from './script.js'
 
-//     username.splice(index,1);
-//     var dihapus = document.getElementById(username[index]);
-//     dihapus.parentNode.removeChild(dihapus)
-//     console.log(username)
-// }
-
-// function cari(){
-//     var dicar = document.getElementById("tombol-cari").value;
-//     const namanya = (element) => element == dicar;
-//     console.log(username.findIndex(namanya));
-// }
-
-// var x ="", i;
-// const list = [['Project Kampus', '9 September'], ["Project Client", "10 September"], ["Kerja", "11 September"]]
-
-// for (i=0; i<list.length; i++) {
-
-//     x = x + `<div class='d-flex flex-row justify-content-center align-items-center todo-list' id='${list[i][0]}'>\
-//       <div class='d-flex justify-content-center align-items-center' style='width: 5%;'>\
-//         <button class='search' type='submit' data-bs-toggle='modal' data-bs-target='#staticBackdrop1'>\
-//           <img src='picture/ceklis.svg' width='20px' height='20px'>\
-//         </button>\
-//       </div >\
-//       <div class='d-flex justify-content-start align-items-center'  style='width: 40%;'>\
-//         <div id='nama-user' style='font-size:20px;'>${list[i][0]}</div>\
-//       </div>\
-//       <div class='d-flex justify-content-start align-items-center'  style='width: 45%;'>\
-//           <div style='font-size:20px;'>${list[i][1]}</div>\
-//         </div>\
-//       <div class='d-flex flex-row justify-content-around'  style='width: 10%;'>\
-//         <button class='search' style='background-color:rgba(255, 198, 51, 1)' data-id='${list[i][0]}' type='submit' data-bs-toggle='modal' data-bs-target='#modalForm1'>\
-//           <img src='picture/ceklis-bg.svg' width='20px' height='20px'>\
-//         </button>\
-//         <button class='search' style='background-color:rgba(255, 102, 102, 1)' type='submit' data-bs-toggle='modal' data-bs-target='#staticBackdrop'>\
-//           <img src='picture/trash 1.svg' width='20px' height='20px'>\
-//         </button>\
-//       </div>\
-//     </div>
-//     `
-//     $(document).on("click", ".open-homeEvents", function () {
-//       var eventId = $(this).data('id');
-//       $('#idHolder').html( eventId );
-//     });
-
-// }
-// document.getElementById('user-column').innerHTML = x;
-
-
+// console.log(user);
 // For Function To Add
 const todoList = document.getElementById("user-column");
 const addToDoForm = document.querySelector(".add-todo-form");
@@ -106,7 +56,20 @@ function OnSearch(input){
           // setTimeout(function(){
             // location.reload()}, 3000);
   }
-  
+
+    var store = localStorage.getItem("user");
+    console.log()
+    console.log(store);
+    if(store.role == "admin"){
+      console.log("admin")
+    }else if(store.role == "user"){
+      document.getElementById("btn-dash").style.display = "none";
+      console.log("user")      
+    }else{
+      console.log("none")
+    }
+
+
 // Fungsi carinnya
 var banding = 0;
 function cari(){
@@ -151,7 +114,7 @@ function cari(){
       data.forEach(
         data =>{
           var dihapus = document.getElementById(data.id);
-          dihapus.parentNode.removeChild(dihapus)
+          dihapus.parentNode.removeChild(dihapus);
       }
   )}}else{
     Swal.fire({

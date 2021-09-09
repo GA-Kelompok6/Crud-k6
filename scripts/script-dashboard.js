@@ -133,6 +133,7 @@ const renderToDo = (todos) => {
 }
 
 
+
 function sweetalertclick(){
   Swal.fire({
     icon: 'success',
@@ -143,7 +144,7 @@ function sweetalertclick(){
   })
 }
 
-const url = "https://613618d38700c50017ef53e3.mockapi.io/UserAdmin";
+const url = "https://613846baeac1410017c185a2.mockapi.io/UserAdmin";
 
 // Ini ketriger kalau si input di close
 function OnSearch(input){
